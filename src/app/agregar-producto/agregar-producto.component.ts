@@ -31,6 +31,5 @@ export class AgregarProductoComponent {
         console.log(error);
       }
     })
-      
   }
 }
