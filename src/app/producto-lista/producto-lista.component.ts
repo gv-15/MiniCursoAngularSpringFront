@@ -32,4 +32,17 @@ export class ProductoListaComponent implements OnInit {
     editarProducto(id: number) {
       this.router.navigate(['editar-producto', id]);
     }
+
+    eliminarProducto(id: number) {
+      this.productoService.eliminarProducto(id).subscribe(
+        {
+          next: (datos) => {
+            this.obtenerProductos();
+          },
+          error: (error) => {
+            console.error(error);
+          }
+        }
+      );
+    }
 }
